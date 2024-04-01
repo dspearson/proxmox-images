@@ -1,0 +1,29 @@
+name: Update File Periodically
+
+on:
+  schedule:
+    - cron: '0 22 * * *'
+
+permissions:
+  contents: write
+jobs:
+  update-file:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Generate output
+        run: |
+          wget -q -O - http://download.proxmox.com/images/ | grep -o -E 'href="[^"#]*\.dat"' | sed -e 's/^href="//' -e 's/"$//' | sort | uniq | while read file; do
+          wget -q -O $file http://download.proxmox.com/images/$file;
+          done;
+          for i in *dat; do cat $i >> images.txt; echo >> images.txt;done
+
+      - name: Update file
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add images.txt
+          git commit -m "Update images.txt"
+          git push
