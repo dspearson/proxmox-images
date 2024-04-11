@@ -29,5 +29,5 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add images.txt
-          git commit -m "Update images.txt"
-          git push
+          git commit -m "Update images.txt" || echo "No changes"
+          git push || true
