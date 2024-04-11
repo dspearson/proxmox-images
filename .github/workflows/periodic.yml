@@ -2,7 +2,7 @@ name: Update File Periodically
 
 on:
   schedule:
-    - cron: '0 15 * * *'
+    - cron: '0 22 * * *'
 
 permissions:
   contents: write
