@@ -1154,20 +1154,6 @@ Infopage: https://pve.proxmox.com/wiki/Linux_Container#pct_supported_distributio
 Description: Ubuntu 23.10 Mantic (standard)
  A small Ubuntu 23.10 Mantic Minotaur system including all standard packages.
 
-Package: ubuntu-24.04-standard
-Version: 24.04-1
-Type: lxc
-OS: ubuntu-24.04
-Section: system
-Maintainer: Proxmox Support Team <support@proxmox.com>
-Architecture: amd64
-Location: system/ubuntu-24.04-standard_24.04-1_amd64.tar.zst
-md5sum: 1cb7c90bee6c6c4fa1eba8925c004acb
-sha512sum: c92badc1a5e06ace6047ca0fec05be70b42bac73fa76e7f2aa976262eda3f14c755e0e0230581c58b41eb710578485dddd86151d84d6ffe40b23d8cea086f174
-Infopage: https://pve.proxmox.com/wiki/Linux_Container#pct_supported_distributions
-Description: Ubuntu 24.04 Noble (standard)
- A small Ubuntu 24.04 Noble Numbat system including all standard packages.
-
 Package: pve-web-news
 Description: News displayed on the admin interface
   <b>Welcome</b> to the Proxmox Virtual Environment!<br><br>
